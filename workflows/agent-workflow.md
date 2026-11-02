@@ -31,7 +31,7 @@ The agents do not message each other. The Team Lead is the message bus: it appro
 1. Create the project repository from the template and clone it.
 2. Start the session with `/start-lead`.
 3. Establish `docs/PROJECT_SPEC.md` with `/interview`.
-4. Run `/plan-project` to fill `docs/ARCHITECTURE.md`, `docs/API_CONTRACT.md`, `docs/TASKS.md`, and adapt the developer role documents.
+4. Run `/plan-project` to fill `docs/ARCHITECTURE.md`, `docs/API_CONTRACT.md`, `docs/TASKS.md`, and adapt the developer role documents. Add constraints on the same line when you want to override its defaults, for example: `/plan-project Use Streamlit + FastAPI, no database, max 6 endpoints.`
 5. Review those documents yourself.
 6. Commit and push the setup to `main`.
 7. Send each developer their repository URL and their task IDs.

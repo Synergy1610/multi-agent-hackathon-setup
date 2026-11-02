@@ -10,12 +10,17 @@ Before anything else:
 2. Read `docs/PROJECT_SPEC.md`.
 3. If `docs/PROJECT_SPEC.md` is still the stub (it contains "Status: not written yet" or has no real problem statement), stop and tell the Team Lead to run `/interview` first. Do not invent a specification.
 4. Read `docs/ARCHITECTURE.md`, `docs/API_CONTRACT.md`, and `docs/TASKS.md` to see what already exists.
+5. Team Lead's constraints for this run (may be empty): $ARGUMENTS
+
+**Constraints override defaults.** The sections below describe the default plan for a team of two beginner developers: one on the UI, one on a Python backend. If the constraints name a stack, language, deployment target, endpoint budget, scope cut, or a different work split, follow the constraints instead. If a constraint contradicts `docs/PROJECT_SPEC.md`, stop and ask the Team Lead which one wins — do not guess.
+
+If the constraints are empty, use the defaults and state that you did so in the final report.
 
 Then produce, in this order:
 
 ## 1. Architecture
 
-Choose the simplest stack the team can finish in 12 hours with two beginner developers — one on UI, one on a Python backend. Prefer boring, well-documented tools over impressive ones. Fill every section of `docs/ARCHITECTURE.md`:
+Choose the simplest stack the team can finish in 12 hours with two beginner developers — one on UI, one on a Python backend — **unless the Team Lead's constraints name a stack.** Prefer boring, well-documented tools over impressive ones. Fill every section of `docs/ARCHITECTURE.md`:
 
 - frontend and backend technology;
 - database (or state explicitly that none is needed);
@@ -77,6 +82,7 @@ Do not write application code. Do not commit or push.
 Finish with a short report:
 
 - the stack you chose, in three bullets;
+- which constraints you applied, or "none given — used defaults";
 - the main user flow in one sentence;
 - the endpoints you defined, as a list;
 - Veer's and Lavesh's first task IDs;

@@ -22,6 +22,7 @@ Then help me with the next step, without starting implementation I have not aske
 
 ### 2. Define the technical plan
 
+- Run `/plan-project [constraints]` after the spec. Anything after the command is treated as a hard constraint (stack, language, deployment, endpoint budget, work split) and overrides the command's defaults.
 - Choose the technology stack based on the team's skills and the demo constraints.
 - Fill `docs/ARCHITECTURE.md`: components, folder structure, data flow, environment variables, risks.
 - Fill `docs/API_CONTRACT.md` before development starts: endpoints, payloads, errors, schema, shared types.

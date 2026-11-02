@@ -42,7 +42,7 @@ Role documents are named after the people because they are used by the same four
 │       ├── start-lead.md              # /start-lead — Team Lead's session kickoff
 │       ├── start-veer.md              # /start-veer — Veer's session kickoff
 │       ├── start-lavesh.md            # /start-lavesh — Lavesh's session kickoff
-│       ├── plan-project.md            # /plan-project — architecture, contract, tasks, roles
+│       ├── plan-project.md            # /plan-project [constraints] — architecture, contract, tasks, roles
 │       └── integrate.md               # /integrate — review branches, test, merge
 │
 ├── docs/
@@ -79,8 +79,8 @@ Role commands:
 
 Two more commands for the Team Lead:
 
-- `/plan-project` — after `/interview`, fills the architecture, API contract, tasks and role docs in one pass, then stops for review.
-- `/integrate` — reviews pushed branches one at a time, tests them, and asks before merging.
+- `/plan-project [constraints]` — after `/interview`, fills the architecture, API contract, tasks and role docs in one pass, then stops for review. Anything you type after the command is treated as a constraint that overrides its defaults.
+- `/integrate [task-id]` — reviews pushed branches one at a time, tests them, and asks before merging. Without an argument it reviews every unmerged branch.
 
 Run the role command at the start of **every** session. `AGENTS.md` is loaded automatically, but the agent does not know which person's machine it is on until you tell it.
 
@@ -113,6 +113,13 @@ Run the role command at the start of **every** session. `AGENTS.md` is loaded au
 
    ```text
    /plan-project
+   ```
+
+   You can add constraints on the same line. They override the command's defaults:
+
+   ```text
+   /plan-project Use Python for both ends: Streamlit frontend, FastAPI backend.
+   No database, use a JSON file. Deploy on Render. Veer owns frontend, Lavesh owns backend. Max 6 endpoints.
    ```
 
    It fills `docs/ARCHITECTURE.md`, `docs/API_CONTRACT.md`, `docs/TASKS.md` and adapts the role docs, then stops for your review. If you prefer to go document by document, the individual prompts are in `workflows/agent-workflow.md`.
