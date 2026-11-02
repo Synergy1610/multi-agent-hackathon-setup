@@ -39,6 +39,7 @@ Role documents are named after the people because they are used by the same four
 │
 ├── .opencode/
 │   └── commands/
+│       ├── start-lead.md              # /start-lead — Team Lead's session kickoff
 │       ├── start-veer.md              # /start-veer — Veer's session kickoff
 │       └── start-lavesh.md            # /start-lavesh — Lavesh's session kickoff
 │
@@ -68,6 +69,14 @@ Role documents are named after the people because they are used by the same four
 | `docs/*.md` | Read on demand, as instructed by `AGENTS.md` and the role doc |
 | `workflows/*.md` | Referenced when branching, committing, and integrating |
 
+Role commands:
+
+- Team Lead → `/start-lead`
+- Veer → `/start-veer`
+- Lavesh → `/start-lavesh`
+
+Run the command at the start of **every** session. `AGENTS.md` is loaded automatically, but the agent does not know which person's machine it is on until you tell it.
+
 ## Starting a hackathon
 
 1. **Create the project repository.** On GitHub, open this repository → **Use this template** → **Create a new repository**. Name it after the hackathon.
@@ -79,14 +88,22 @@ Role documents are named after the people because they are used by the same four
    opencode
    ```
 
-3. **Generate the project documents** in this order:
+3. **Start the Team Lead session.** Inside OpenCode:
+
+   ```text
+   /start-lead
+   ```
+
+   This is how the agent knows which role it is playing on this machine. Developers use `/start-veer` or `/start-lavesh` instead.
+
+4. **Generate the project documents** in this order:
    - `/interview` → writes `docs/PROJECT_SPEC.md`
    - *"Read `docs/PROJECT_SPEC.md`, choose the stack, and populate `docs/ARCHITECTURE.md`."*
    - *"Define endpoints, payloads, error shapes, database schema and shared types in `docs/API_CONTRACT.md`."*
    - *"Break the MVP into tasks with IDs, owners, priorities, dependencies and completion criteria in `docs/TASKS.md`."*
    - *"Adapt `roles/veer.md` and `roles/lavesh.md` to this project's actual work split."*
-4. **Review the contract and tasks yourself.** They are the interface between two agents that cannot talk to each other.
-5. **Commit and push the setup.**
+5. **Review the contract and tasks yourself.** They are the interface between two agents that cannot talk to each other.
+6. **Commit and push the setup.**
 
    ```bash
    git add .
@@ -96,7 +113,7 @@ Role documents are named after the people because they are used by the same four
 
    This is the only allowed direct commit to `main`.
 
-6. **Send each developer their repo URL and task IDs.**
+7. **Send each developer their repo URL and task IDs.**
 
 ## Onboarding a developer
 

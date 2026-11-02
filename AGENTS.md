@@ -9,6 +9,8 @@ Shared rules for every OpenCode agent working in this repository. Read this file
    - Team Lead → `roles/team-lead.md`
    - Veer → `roles/veer.md`
    - Lavesh → `roles/lavesh.md`
+
+   The project commands `/start-lead`, `/start-veer`, and `/start-lavesh` do all of this for you. Use the one for your machine at the start of every session.
 3. Read, in this order:
    - `docs/PROJECT_SPEC.md`
    - `docs/ARCHITECTURE.md`
