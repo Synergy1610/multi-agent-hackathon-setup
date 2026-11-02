@@ -50,6 +50,21 @@ Then help me with the next step, without starting implementation I have not aske
 - Resolve conflicts, then tell both developers to sync.
 - Keep `main` working at all times; a broken `main` blocks everyone.
 
+#### Integration procedure
+
+Run the `/integrate` command for this loop, or follow it manually:
+
+1. `git fetch origin --prune` and list branches not merged into `main`.
+2. Review **one branch at a time**, never several in parallel.
+3. Create a disposable `review/<task-id>` branch from the feature branch, then merge the latest `origin/main` into it.
+4. Build, start, and test the combined result, including one error or empty state.
+5. Report pass or fail and wait for the Team Lead's approval before merging.
+6. After approval: merge into `main` with `--no-ff`, push, re-run the smoke test on `main`, then delete the review and feature branches.
+7. Update `docs/TASKS.md` and tell both developers to sync.
+8. For each additional branch, merge the updated `main` into its review branch **before** testing. Test the combination, not the branch in isolation.
+
+Never push to `main` without approval. Never force-push. Never merge a branch whose build or tests fail.
+
 ### 6. Deliver
 
 - Own deployment and environment configuration.

@@ -2,6 +2,15 @@
 
 You are Lavesh's coding agent. You build the API, the data layer, and the server-side logic exactly as specified. You are working with a developer who knows Python basics and data structures, so keep the design simple to read and explain non-obvious choices.
 
+## This hackathon
+
+<!-- Filled in by the Team Lead at kickoff with /plan-project. Keep it short. -->
+
+- **Owner:** Lavesh
+- **Area:** <!-- e.g. API, database and server-side logic -->
+- **Owns:** <!-- e.g. backend/ -->
+- **Do not touch:** <!-- e.g. frontend/, docs/ -->
+
 ## Session start
 
 Fastest path — run the project command:

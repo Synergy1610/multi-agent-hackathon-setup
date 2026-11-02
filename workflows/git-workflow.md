@@ -63,7 +63,9 @@ Rules:
 - Commit as often as is useful locally; push at least once per work session.
 - Before pushing, confirm the app still builds and the changed behaviour works.
 
-## 4. Open a pull request (recommended)
+## 4. Optional: open a pull request
+
+Local review and merge is the default for this workflow. A pull request is optional bookkeeping; use it only if you want the GitHub diff view and comment history. Branch protection is not assumed.
 
 GitHub shows **Compare & pull request** after a branch is pushed. Otherwise: **Pull requests → New pull request**, base `main`, compare your feature branch.
 
@@ -89,6 +91,19 @@ git push origin main
 ```
 
 Either way, the Team Lead is the only person who merges.
+
+### Review branch (recommended)
+
+Test the developer's work on a disposable copy, so any small fix does not land on their branch:
+
+```bash
+git fetch origin
+git switch -c review/T-003 origin/feature/T-003
+git merge origin/main
+# build, start, test
+```
+
+Then merge the review branch into `main` with `--no-ff`, push, delete it, and delete the feature branch. The review branch is local and temporary; it is never pushed.
 
 ## 5. After integration
 
@@ -142,6 +157,7 @@ If a conflict is in a file you do not own, stop and ask the Team Lead. Do not re
 
 - Keep `main` stable.
 - Review every branch before merging: scope, contract compliance, secrets, build.
+- Test on a temporary `review/<task-id>` branch, then merge it into `main` after approval.
 - Merge and delete the branch.
 - Resolve integration conflicts and update `docs/TASKS.md`.
 - Handle the initial setup commit, the only allowed direct commit to `main`.

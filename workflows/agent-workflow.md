@@ -29,14 +29,32 @@ The agents do not message each other. The Team Lead is the message bus: it appro
 ## 1. Preparation (Team Lead)
 
 1. Create the project repository from the template and clone it.
-2. Establish `docs/PROJECT_SPEC.md` with the interview skill.
-3. Finalise `docs/ARCHITECTURE.md` and `docs/API_CONTRACT.md`.
-4. Break the work into tasks in `docs/TASKS.md`, with owners, priorities, dependencies, and completion criteria.
-5. Adapt the developer role documents to this project's actual split.
+2. Start the session with `/start-lead`.
+3. Establish `docs/PROJECT_SPEC.md` with `/interview`.
+4. Run `/plan-project` to fill `docs/ARCHITECTURE.md`, `docs/API_CONTRACT.md`, `docs/TASKS.md`, and adapt the developer role documents.
+5. Review those documents yourself.
 6. Commit and push the setup to `main`.
 7. Send each developer their repository URL and their task IDs.
 
 **Exit condition:** architecture and contract are frozen enough to build against, and every developer has at least one unblocked task.
+
+If you prefer to run the planning steps individually instead of `/plan-project`:
+
+```text
+Read docs/PROJECT_SPEC.md, choose the stack, and populate docs/ARCHITECTURE.md.
+```
+
+```text
+Define endpoints, payloads, error shapes, database schema and shared types in docs/API_CONTRACT.md.
+```
+
+```text
+Break the MVP into tasks with IDs, owners, priorities, dependencies and completion criteria in docs/TASKS.md.
+```
+
+```text
+Adapt roles/veer.md and roles/lavesh.md to this project's actual work split.
+```
 
 ## 2. Development (developers)
 
@@ -60,14 +78,21 @@ The agents do not message each other. The Team Lead is the message bus: it appro
 
 ## 3. Integration (Team Lead)
 
-1. Read the developer's report and check the diff.
-2. Verify the branch against `docs/API_CONTRACT.md` and `docs/ARCHITECTURE.md`.
-3. Review the code: scope, correctness, error handling, secrets, dependencies.
-4. Run the project and test the changed flow yourself.
-5. Apply the checklists in `workflows/integration-checklist.md`.
-6. Merge into `main` (direct merge or pull request — see `workflows/git-workflow.md`).
-7. Update `docs/TASKS.md` statuses.
-8. Tell every developer to synchronise before starting new work.
+Run `/integrate`, or follow this loop manually:
+
+1. `git fetch origin --prune` and list branches not merged into `main`.
+2. Read the developer's report and check the diff.
+3. Verify the branch against `docs/API_CONTRACT.md` and `docs/ARCHITECTURE.md`.
+4. Review the code: scope, correctness, error handling, secrets, dependencies.
+5. Create a disposable `review/<task-id>` branch from the feature branch and merge the latest `origin/main` into it.
+6. Run the project and test the changed flow yourself.
+7. Apply the checklists in `workflows/integration-checklist.md`.
+8. Report pass or fail and wait for the Team Lead's approval.
+9. Merge into `main` (`--no-ff`), push, re-test `main`, then delete the review and feature branches.
+10. Update `docs/TASKS.md` statuses.
+11. Tell every developer to synchronise before starting new work.
+
+Review **one branch at a time**. For a second branch, merge the updated `main` into its review branch before testing — test the combination, not the isolated branch.
 
 **Exit condition:** `main` builds, starts, and the integrated flow works — not just the individual branches.
 

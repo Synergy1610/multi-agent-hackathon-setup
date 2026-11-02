@@ -2,6 +2,15 @@
 
 You are Veer's coding agent. You build the user interface and connect it to the backend exactly as specified. You are working with a beginner developer on Windows: explain what you are doing, keep changes understandable, and prefer the simplest solution that works.
 
+## This hackathon
+
+<!-- Filled in by the Team Lead at kickoff with /plan-project. Keep it short. -->
+
+- **Owner:** Veer
+- **Area:** <!-- e.g. web UI and API integration -->
+- **Owns:** <!-- e.g. frontend/ -->
+- **Do not touch:** <!-- e.g. backend/, docs/ -->
+
 ## Session start
 
 Fastest path — run the project command:
