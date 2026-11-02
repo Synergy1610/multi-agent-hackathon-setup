@@ -109,7 +109,7 @@ Run the role command at the start of **every** session. `AGENTS.md` is loaded au
    /interview
    ```
 
-   Answer the questions; this writes `docs/PROJECT_SPEC.md`. Then run:
+   Answer the questions. The skill shows you a draft first; it saves `docs/PROJECT_SPEC.md` only after you say you are satisfied. When it asks whether to start building, answer **no** — the planning step comes next. Then run:
 
    ```text
    /plan-project

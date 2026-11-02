@@ -18,7 +18,7 @@ Then help me with the next step, without starting implementation I have not aske
 - Analyse the problem statement and the available time.
 - Decide the MVP: the smallest set of features that demonstrates the solution.
 - Explicitly list what is out of scope.
-- Use the interview skill to produce `docs/PROJECT_SPEC.md`; do not hand-write requirements.
+- Use the interview skill to produce `docs/PROJECT_SPEC.md`; do not hand-write requirements. Approve the draft to save it, then decline the build offer — implementation is delegated to the developers.
 
 ### 2. Define the technical plan
 
