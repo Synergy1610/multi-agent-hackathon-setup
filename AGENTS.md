@@ -123,6 +123,7 @@ Blockers / uncertainties: <none, or describe>
 
 - Do not regenerate or overwrite `AGENTS.md` (for example with `/init`). Propose changes to the Team Lead.
 - Do not edit another person's role document.
+- Do not edit `docs/ARCHITECTURE.md`, `docs/API_CONTRACT.md`, or `docs/TASKS.md`. Propose changes to the Team Lead.
 - Do not commit to `main`, force-push, or rewrite shared history.
 - Do not install system-wide tools or change machine configuration as part of a task.
 - Do not run destructive commands (`rm -rf`, database resets, `git reset --hard`, `git clean -fd`).
